@@ -1,0 +1,82 @@
+/* Estilo del logo en la navbar */
+.navbar-brand img {
+  height: 75px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 60px;
+  }
+  .navbar-collapse {
+    padding-left: 1rem;
+  }
+}
+
+/* Estilo del carrusel con proporción fija */
+.carousel-aspect-ratio {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-aspect-ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Estilos para swiper móvil */
+.swiper {
+  padding-bottom: 2rem;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  height: auto;
+}
+
+.swiper-slide .card {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Ajuste adicional por si falta altura fija en móviles */
+.swiper-slide .card {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Títulos centrados o con márgenes en secciones */
+.fs-2 {
+  font-weight: bold;
+}
+
+/* Ajustes opcionales para enlaces "Ver más" */
+a.text-decoration-underline {
+  transition: all 0.2s ease-in-out;
+}
+
+a.text-decoration-underline:hover {
+  text-decoration: none;
+}
