@@ -1,94 +1,80 @@
-<!-- CONTENIDO PRINCIPAL BAZAAR -->
-<div class="container py-2 d-flex flex-column align-items-center">
-  <div class="w-100" style="max-width: 83.33%;">
-    
-    <!-- TÍTULO Y PÁRRAFOS -->
-    <p class="fs-2 mb-3 text-center">Bazaar</p>
+<section id="bazaar" class="container py-5">
+  <h2 class="fs-2 text-center mb-4">Bazaar</h2>
 
-    <div class="text-start mb-4" style="margin-bottom: 1cm !important;">
-      <p class="fs-5 mb-2">
-        En Bazaar encontrarás el espacio perfecto para explorar y comprar piezas de joyería certificadas.
-      </p>
-      <p class="fs-5">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
-      </p>
-    </div>
-<!-- BAZAAR CARDS -->
+  <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+    <p class="fs-5">
+      Descubre piezas de joyería certificadas, diseñadas para combinar lujo y exclusividad.
+    </p>
+  </div>
 
-<div class="container mb-5" style="max-width: 83.33%; margin-bottom: 1cm !important;">
-  <!-- Escritorio: grid normal -->
-  <div class="d-none d-md-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-    <!-- CARD 1 -->
-    <div class="card h-100 d-flex flex-column">
-      <img src="imagenes/PROPUESTA FINAL MDLT.png" class="card-img-top" alt="Joya 1">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Anillo personalizado: Mario de la Torre</h5>
-        <p class="card-text flex-grow-1">Este anillo fue un diseño personalizado realizado para un cliente que buscaba un diseño sencillo, elegante y serio. Descubre más.</p>
+  <!-- Escritorio: Grid -->
+  <div class="row g-4 d-none d-md-flex">
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0">
+        <img src="imagenes/PROPUESTA FINAL MDLT.png" class="card-img-top" alt="Joya 1">
+        <div class="card-body text-center">
+          <h5 class="card-title">Anillo Personalizado</h5>
+          <p class="card-text">Diseñado para un cliente que buscaba un estilo elegante y exclusivo.</p>
+        </div>
       </div>
     </div>
-
-    <!-- CARD 2 -->
-    <div class="card h-100 d-flex flex-column">
-      <img src="imagenes/ANILLO GENÉRICO COMING SOON.png" class="card-img-top" alt="Joya 2">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Muy Pronto</h5>
-        <p class="card-text flex-grow-1">Más diseños totalmente personalizados.</p>
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0">
+        <img src="imagenes/ANILLO GENÉRICO COMING SOON.png" class="card-img-top" alt="Joya 2">
+        <div class="card-body text-center">
+          <h5 class="card-title">Muy Pronto</h5>
+          <p class="card-text">Nuevas piezas exclusivas.</p>
+        </div>
       </div>
     </div>
-
-    <!-- CARD 3 -->
-    <div class="card h-100 d-flex flex-column">
-      <img src="imagenes/ANILLO GENÉRICO COMING SOON.png" class="card-img-top" alt="Joya 3">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Muy Pronto</h5>
-        <p class="card-text flex-grow-1">Más diseños totalmente personalizados.</p>
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0">
+        <img src="imagenes/ANILLO GENÉRICO COMING SOON.png" class="card-img-top" alt="Joya 3">
+        <div class="card-body text-center">
+          <h5 class="card-title">Muy Pronto</h5>
+          <p class="card-text">Próximamente nuevos diseños.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Móvil: Swiper Carousel -->
-    <div class="swiper d-md-none" style="padding-bottom: 2rem;">
-      <div class="swiper-wrapper">
-
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <div class="card h-100 d-flex flex-column" style="height: 100%;">
-            <img src="imagenes/PROPUESTA FINAL MDLT.png" class="card-img-top" alt="Joya 1">
-            <div class="card-body d-flex flex-column flex-grow-1">
-              <h5 class="card-title">Anillo personalizado: Mario de la Torre</h5>
-              <p class="card-text flex-grow-1">Este anillo fue un diseño personalizado realizado para un cliente que buscaba un diseño sencillo, elegante y serio. Descubre más.</p>
-            </div>
+  <!-- Móvil: Carousel -->
+  <div class="swiper d-md-none">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="card shadow-sm border-0">
+          <img src="imagenes/PROPUESTA FINAL MDLT.png" class="card-img-top" alt="Joya 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">Anillo Personalizado</h5>
+            <p class="card-text">Diseño elegante y exclusivo.</p>
           </div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          <div class="card h-100 d-flex flex-column" style="height: 100%;">
-            <img src="imagenes/ANILLO GENÉRICO COMING SOON.png" class="card-img-top" alt="Joya 2">
-            <div class="card-body d-flex flex-column flex-grow-1">
-              <h5 class="card-title">Muy Pronto</h5>
-              <p class="card-text flex-grow-1">Más diseños totalmente personalizados.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="swiper-slide">
-          <div class="card h-100 d-flex flex-column" style="height: 100%;">
-            <img src="imagenes/ANILLO GENÉRICO COMING SOON.png" class="card-img-top" alt="Joya 3">
-            <div class="card-body d-flex flex-column flex-grow-1">
-              <h5 class="card-title">Muy Pronto</h5>
-              <p class="card-text flex-grow-1">Más diseños totalmente personalizados.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="card shadow-sm border-0">
+          <img src="imagenes/ANILLO GENÉRICO COMING SOON.png" class="card-img-top" alt="Joya 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Muy Pronto</h5>
+            <p class="card-text">Nuevas piezas exclusivas.</p>
+          </div>
+        </div>
       </div>
-    </div>
-
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="card shadow-sm border-0">
+          <img src="imagenes/ANILLO GENÉRICO COMING SOON.png" class="card-img-top" alt="Joya 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Muy Pronto</h5>
+            <p class="card-text">Próximamente nuevos diseños.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+

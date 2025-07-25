@@ -1,24 +1,57 @@
-/* Estilo del logo en la navbar */
+/* === ESTILOS GENERALES === */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #000;
+  scroll-behavior: smooth; /* Scroll suave */
+}
+
+/* === NAVBAR (HEADER) === */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .navbar-brand img {
-  height: 75px;
+  height: 120px; /* Tamaño grande para logo */
   width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 5px auto; /* Centramos visualmente */
 }
 
-@media (max-width: 768px) {
-  .navbar-brand img {
-    height: 60px;
-  }
-  .navbar-collapse {
-    padding-left: 1rem;
-  }
+/* Links del menú */
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000; /* Negro por defecto */
+  padding: 8px 15px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent; /* Línea invisible inicialmente */
 }
 
-/* Estilo del carrusel con proporción fija */
+/* Hover: rojo Cartier + línea inferior */
+.navbar-nav .nav-link:hover {
+  color: #b30000;
+  border-bottom: 2px solid #b30000;
+}
+
+/* Activo (si quieres marcar la opción seleccionada) */
+.navbar-nav .nav-link.active {
+  color: #b30000;
+  border-bottom: 2px solid #b30000;
+}
+
+/* === CARRUSEL === */
 .carousel-aspect-ratio {
   aspect-ratio: 16 / 9;
   width: 100%;
   overflow: hidden;
-  background: #f0f0f0;
+  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +64,19 @@
   display: block;
 }
 
-/* Estilos para swiper móvil */
+/* === TARJETAS (BAZAAR Y OTROS) === */
+.card {
+  border: none;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === SWIPER (MÓVIL) === */
 .swiper {
   padding-bottom: 2rem;
   touch-action: pan-y;
@@ -46,37 +91,137 @@
   height: auto;
 }
 
-.swiper-slide .card {
-  width: 85%;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-}
-
-.card-body {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Ajuste adicional por si falta altura fija en móviles */
-.swiper-slide .card {
-  width: 85%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Títulos centrados o con márgenes en secciones */
+/* === TITULOS === */
 .fs-2 {
   font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Ajustes opcionales para enlaces "Ver más" */
+/* === LINKS "Ver más" === */
 a.text-decoration-underline {
-  transition: all 0.2s ease-in-out;
+  color: #b30000;
+  transition: all 0.3s ease-in-out;
 }
 
 a.text-decoration-underline:hover {
   text-decoration: none;
+  color: #800000;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #fff;
+  color: #000;
+  padding: 40px 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+footer h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #b30000;
+}
+
+footer a img {
+  filter: grayscale(100%) brightness(0%) contrast(100%); /* Íconos negros */
+  transition: filter 0.3s ease;
+}
+
+footer a img:hover {
+  filter: grayscale(0%) brightness(40%) sepia(100%) hue-rotate(-20deg) saturate(500%); /* Rojo */
+}
+
+footer .bottom-line {
+  border-top: 1px solid #ddd;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 90px; /* Logo más pequeño en móviles */
+  }
+}
+/* Botón flotante de WhatsApp en rojo Cartier */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background-color: #A6192E; /* Rojo Cartier */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* Icono blanco */
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Versión responsive (más pequeña en móviles) */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
+  }
+}
+/* Rojo Cartier para tabs y botones */
+.nav-tabs .nav-link.active {
+  color: #A6192E !important;
+  border-color: #A6192E #A6192E transparent !important;
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link {
+  color: #A6192E !important;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #fff !important;
+  background-color: #A6192E !important;
+  border-radius: 0.25rem;
+}
+
+/* Botón rojo Cartier */
+.btn-cartier {
+  background-color: #A6192E;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
+.btn-cartier:hover {
+  background-color: #7C1221;
+  color: #fff;
 }
