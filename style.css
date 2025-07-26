@@ -288,3 +288,14 @@ body {
     display: none;
   }
 }
+
+.carrusel-ajustado {
+  padding-top: 140px; /* Altura estimada de la navbar */
+}
+
+/* En móviles, la navbar es más pequeña */
+@media (max-width: 768px) {
+  .carrusel-ajustado {
+    padding-top: 100px;
+  }
+}
