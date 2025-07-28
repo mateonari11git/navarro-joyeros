@@ -1,14 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" style="padding-top: 0; padding-bottom: 0;">
-  <div class="container-fluid flex-column text-center" style="margin-top: 0; margin-bottom: 0;">
-    <!-- LOGO GRANDE -->
-    <a class="navbar-brand mx-auto" href="#landing" style="margin-bottom: 0;">
-      <img src="imagenes/LOGO-ALTA-CALIDAD-RECTANGULAR.PNG" alt="Logo" class="img-fluid" style="height: 100px; width: auto;">
-    </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container-fluid align-items-center d-flex justify-content-between px-3">
 
-    <!-- MENÚ -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <!-- Botón menú hamburguesa -->
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Logo centrado -->
+    <a class="navbar-brand mx-auto d-lg-block d-flex justify-content-center" href="#landing">
+      <img src="imagenes/LOGO-ALTA-CALIDAD-RECTANGULAR.PNG" alt="Logo" class="img-fluid logo-navbar">
+    </a>
+
+    <!-- Espacio reservado para balancear el logo centrado en móvil -->
+    <div class="d-lg-none" style="width: 40px;"></div>
+
+    <!-- Menú colapsado -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav gap-12" style="margin-top: 0.2rem; margin-bottom: 0; font-size: 1.2rem;">
         <li class="nav-item"><a class="nav-link" href="#signet">Signet Rings</a></li>
@@ -17,5 +23,6 @@
         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
