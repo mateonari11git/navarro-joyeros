@@ -296,6 +296,84 @@ body {
 /* En móviles, la navbar es más pequeña */
 @media (max-width: 768px) {
   .carrusel-ajustado {
-    padding-top: 100px;
+    padding-top: 70px;
   }
 }
+
+/* Logo tamaño en escritorio */
+.logo-navbar {
+  height: 100px;
+  width: auto;
+}
+
+/* Ajustes en móviles */
+@media (max-width: 768px) {
+  .logo-navbar {
+    height: 60px !important;
+  }
+
+  .navbar {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ajusta altura general */
+  .navbar .container-fluid {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+
+  /* Logo móvil más pequeño y alineado con hamburguesa */
+  .logo-navbar-mobile {
+    height: 50px !important;
+    width: auto;
+  }
+
+  /* Botón hamburguesa más compacto */
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    border: none;
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 100% 100%;
+  }
+
+  /* Logo sin centrado forzado */
+  .navbar-brand {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Remueve espacio vacío (ya no se necesita balance visual) */
+  .navbar .d-flex.d-lg-none > div:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Centra el logo perfectamente en móviles */
+  .navbar .navbar-brand {
+    position: relative;
+    z-index: 1;
+  }
+
+  .navbar .navbar-toggler {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .navbar .d-flex.d-lg-none {
+    justify-content: center !important;
+  }
+}
+
