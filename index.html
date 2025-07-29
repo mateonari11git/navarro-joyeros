@@ -84,5 +84,23 @@
     });
   </script>
 
+  <script>
+      // Esperamos que include.js haya terminado
+      document.addEventListener("includesLoaded", () => {
+        const navbar = document.querySelector(".navbar");
+
+        if (!navbar) return;
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 100) {
+            navbar.classList.add("shrink");
+          } else {
+            navbar.classList.remove("shrink");
+          }
+        });
+      });
+  </script>
+
+
 </body>
 </html>
