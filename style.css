@@ -376,4 +376,88 @@ body {
     justify-content: center !important;
   }
 }
+/* === NAVBAR REDUCIDA AL HACER SCROLL (ESCRITORIO) === */
+@media (min-width: 992px) {
+  .navbar.shrink {
+    height: 70px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
 
+  .navbar.shrink .logo-navbar {
+    height: 60px !important;
+  }
+
+  .navbar.shrink .navbar-nav .nav-link {
+    padding: 6px 12px !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar.shrink .container-fluid {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 40px;
+  }
+
+  .navbar.shrink .navbar-brand {
+    margin: 0 !important;
+  }
+
+  .navbar.shrink .navbar-brand img {
+    height: 60px !important;
+  }
+
+  .navbar.shrink .navbar-collapse {
+    display: flex !important;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .navbar.shrink .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    margin-left: auto;
+  }
+
+  .navbar.shrink .nav-link {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+/* === AJUSTES ADICIONALES PARA SHRINK: Logo a la izquierda, menú distribuido === */
+@media (min-width: 992px) {
+  .navbar.shrink .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar.shrink .navbar-brand {
+    order: 0;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar.shrink .navbar-collapse {
+    order: 1;
+    flex-grow: 1;
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .navbar.shrink .navbar-nav {
+    gap: 3rem;
+    justify-content: flex-start;
+  }
+}
