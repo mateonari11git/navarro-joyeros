@@ -100,7 +100,28 @@
         });
       });
   </script>
+  <script>
+    document.addEventListener("includesLoaded", () => {
+      document.addEventListener("click", function (e) {
+        const clickedLink = e.target.closest('.navbar-collapse.show .nav-link');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
 
+        if (clickedLink && navbarCollapse.classList.contains('show')) {
+          // Añade clase de salida a los enlaces
+          const links = navbarCollapse.querySelectorAll('.nav-link');
+          links.forEach(link => link.classList.add('fade-out-links'));
 
+          // Espera 500ms antes de cerrar el menú
+          setTimeout(() => {
+            const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+            bsCollapse.hide();
+
+            // Limpia la clase para próximas veces
+            links.forEach(link => link.classList.remove('fade-out-links'));
+          }, 500); // Tiempo acorde a tu transición
+        }
+      });
+    });
+</script>
 </body>
 </html>

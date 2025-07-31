@@ -462,4 +462,16 @@ body {
   }
 }
 
+@media (max-width: 991.98px) {
+  .navbar-collapse .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 2s ease; /* Entrada suave */
+  }
 
+  .navbar-collapse .nav-link.fade-out-links {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 2s ease; /* Salida suave */
+  }
+}
