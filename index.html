@@ -47,23 +47,50 @@
         });
       }
     });
+  </script>
 
-    // Scroll suave al hacer clic en los enlaces del menú
-    document.addEventListener("click", function (e) {
-      const link = e.target.closest('.navbar-nav a[href^="#"]');
-      if (link) {
-        e.preventDefault();
-        const targetId = link.getAttribute("href");
-        const target = document.querySelector(targetId);
-        const navbar = document.querySelector(".navbar");
-        if (target && navbar) {
-          const offset = navbar.offsetHeight + 10;
-          const targetPosition = target.offsetTop - offset;
-          window.scrollTo({ top: targetPosition, behavior: "smooth" });
+  <script>
+    // Scroll suave con ajuste preciso para móvil y desktop
+    document.addEventListener("includesLoaded", () => {
+      document.addEventListener("click", function (e) {
+        const link = e.target.closest('.navbar-nav a[href^="#"]');
+        const isMobile = window.innerWidth < 992;
+
+        if (link) {
+          e.preventDefault();
+          const targetId = link.getAttribute("href");
+          const target = document.querySelector(targetId);
+          const navbar = document.querySelector(".navbar");
+
+          if (!target || !navbar) return;
+
+          const scrollToSection = () => {
+            const navbarHeight = navbar.getBoundingClientRect().height;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: targetTop - navbarHeight,
+              behavior: "smooth"
+            });
+          };
+
+          if (isMobile) {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+              setTimeout(scrollToSection, 350);
+            } else {
+              scrollToSection();
+            }
+          } else {
+            scrollToSection();
+          }
         }
-      }
+      });
     });
+  </script>
 
+  <script>
     // Marca activa la sección actual
     document.addEventListener("scroll", () => {
       const sections = document.querySelectorAll("section[id]");
@@ -85,43 +112,83 @@
   </script>
 
   <script>
-      // Esperamos que include.js haya terminado
-      document.addEventListener("includesLoaded", () => {
-        const navbar = document.querySelector(".navbar");
+    // Shrink navbar al hacer scroll
+    document.addEventListener("includesLoaded", () => {
+      const navbar = document.querySelector(".navbar");
+      if (!navbar) return;
 
-        if (!navbar) return;
-
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 100) {
-            navbar.classList.add("shrink");
-          } else {
-            navbar.classList.remove("shrink");
-          }
-        });
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          navbar.classList.add("shrink");
+        } else {
+          navbar.classList.remove("shrink");
+        }
       });
+    });
   </script>
+
   <script>
+    // Cierra menú móvil con animación suave
     document.addEventListener("includesLoaded", () => {
       document.addEventListener("click", function (e) {
         const clickedLink = e.target.closest('.navbar-collapse.show .nav-link');
         const navbarCollapse = document.querySelector('.navbar-collapse');
 
         if (clickedLink && navbarCollapse.classList.contains('show')) {
-          // Añade clase de salida a los enlaces
           const links = navbarCollapse.querySelectorAll('.nav-link');
           links.forEach(link => link.classList.add('fade-out-links'));
 
-          // Espera 500ms antes de cerrar el menú
           setTimeout(() => {
             const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
             bsCollapse.hide();
-
-            // Limpia la clase para próximas veces
             links.forEach(link => link.classList.remove('fade-out-links'));
-          }, 500); // Tiempo acorde a tu transición
+          }, 500);
         }
       });
     });
-</script>
+  </script>
+
+  <script>
+    // Evita doble activación de secciones en móvil tras hacer clic
+    let mobileClickLock = false;
+
+    document.addEventListener("click", function (e) {
+      const clickedLink = e.target.closest('.navbar-collapse.show .nav-link');
+      if (clickedLink && window.innerWidth < 992) {
+        mobileClickLock = true;
+
+        document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+          link.classList.remove("active");
+        });
+        clickedLink.classList.add("active");
+
+        setTimeout(() => {
+          mobileClickLock = false;
+        }, 1000);
+      }
+    });
+
+    document.addEventListener("scroll", () => {
+      if (window.innerWidth < 992 && mobileClickLock) return;
+
+      const sections = document.querySelectorAll("section[id]");
+      const scrollY = window.scrollY + 120;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const id = section.getAttribute("id");
+        const navLink = document.querySelector(`.navbar-nav a[href="#${id}"]`);
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+            link.classList.remove("active");
+          });
+          navLink?.classList.add("active");
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
