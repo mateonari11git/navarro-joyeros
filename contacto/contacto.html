@@ -31,6 +31,8 @@
 
       <!-- Contenido de las pestañas -->
       <div class="tab-content" id="contactTabsContent">
+        
+        <!-- Primera pestaña: Cuéntanos tu Idea -->
         <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="row align-items-center">
             <div class="col-md-6 mb-4 ps-md-5 pe-md-4">
@@ -55,12 +57,6 @@
                   <textarea class="form-control" id="idea" name="idea" rows="3" placeholder="Cuéntanos tu idea..." required></textarea>
                 </div>
 
-                <div class="mb-3">
-                  <label for="imagen" class="form-label">Subir una imagen (opcional)</label>
-                  <input class="form-control" type="file" id="imagen" name="imagen" accept="image/*">
-                </div>
-
-                <!-- Campo oculto para Reply-To (se llenará con el correo del usuario) -->
                 <input type="hidden" name="reply_to" id="reply_to">
 
                 <button type="submit" class="btn btn-cartier">Enviar</button>
@@ -69,6 +65,32 @@
             </div>
             <div class="col-md-6 text-center pe-md-5 ps-md-4">
               <img src="imagenes/IMAGEN GENERICA PRUEBA CONTACTANOS.jpg" alt="Imagen de contacto" class="img-fluid rounded shadow">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Segunda pestaña: Agenda una cita -->
+        <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+          <div class="row align-items-center">
+            <!-- Calendario + botón -->
+            <div class="col-md-6 mb-4 ps-md-5 pe-md-4 text-start">
+              <h5 class="mb-3">Selecciona una fecha</h5>
+              <input type="text" class="form-control mb-4" id="fechaCita" placeholder="Haz clic para seleccionar">
+
+              <div class="text-center">
+                <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20cita" 
+                  target="_blank" 
+                  class="btn btn-cartier">
+                  Agendar cita por WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <!-- Imagen -->
+            <div class="col-md-6 text-center pe-md-5 ps-md-4">
+              <img src="https://via.placeholder.com/500x400?text=Tu+imagen+aqui" 
+                  alt="Imagen cita" 
+                  class="img-fluid rounded shadow">
             </div>
           </div>
         </div>
@@ -90,4 +112,5 @@
       </div>
     </div>
   </footer>
+
 </body>

@@ -462,3 +462,7 @@ body {
   }
 }
 
+/* Ajuste para mover la imagen 1 cm hacia arriba en la pestaña "Cuéntanos tu Idea" */
+#contacto .img-fluid {
+  margin-top: -1cm; /* Mueve la imagen hacia arriba 1 cm */
+}
