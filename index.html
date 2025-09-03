@@ -190,5 +190,44 @@
     });
   </script>
 
+  <script>
+  document.addEventListener('includesLoaded', () => {
+    const form = document.querySelector('#contact-form');
+    const msg = document.querySelector('#form-msg');
+
+    if (!form) {
+      console.error("❌ No se encontró el formulario de contacto");
+      return;
+    }
+
+    // Listener para submit
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // Evita que la página se recargue
+      console.log("Formulario enviado"); // Esto sí debería aparecer
+
+      msg.textContent = 'Enviando…';
+
+      const nombre = form.querySelector('#nombre')?.value || '';
+      const correo = form.querySelector('#correo')?.value || '';
+      const telefono = form.querySelector('#telefono')?.value || '';
+      const idea = form.querySelector('#idea')?.value || '';
+      const imagen = form.querySelector('#imagen')?.files[0];
+
+      // Generar mensaje para WhatsApp
+      let mensaje = `*Nombre:* ${nombre}\n*Correo:* ${correo}\n*Teléfono:* ${telefono}\n*Idea:* ${idea}`;
+      if (imagen) mensaje += `\n*Imagen:* ${imagen.name}`;
+
+      const numero = '573112962121';
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+      // Abrir WhatsApp en nueva pestaña
+      window.open(url, '_blank');
+
+      msg.textContent = '¡Gracias! Tu mensaje fue enviado a WhatsApp.';
+      form.reset();
+    });
+  });
+  </script>
+
 </body>
 </html>
