@@ -1,102 +1,82 @@
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<section class="py-5 bg-white" id="contacto">
-  <div class="container py-3 mb-5">
-    <!-- Título principal -->
-    <div class="row">
-      <div class="col-md-6 ps-md-5 pe-md-4">
-        <p class="fs-2 mb-3 text-justify">Contáctanos</p>
-      </div>
-    </div>
 
-    <!-- Pestañas -->
-    <div class="row">
-      <div class="col-md-6 ps-md-5 pe-md-4">
-        <ul class="nav nav-tabs py-3 mb-4" id="contactTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="form-tab" data-bs-toggle="tab" data-bs-target="#form" type="button" role="tab" aria-controls="form" aria-selected="true">
-              Cuéntanos tu Idea
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other" type="button" role="tab" aria-controls="other" aria-selected="false">
-              Agenda una Cita
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Contenido de las pestañas -->
-    <div class="tab-content" id="contactTabsContent">
-      <!-- Primera pestaña -->
-      <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
-        <div class="row align-items-center">
-          <!-- Formulario -->
-          <div class="col-md-6 mb-4 ps-md-5 pe-md-4">
-            <form>
-              <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
-              </div>
-              <div class="mb-3">
-                <label for="correo" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="correo" placeholder="tu@email.com">
-              </div>
-              <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono" placeholder="+57 300 1234567">
-              </div>
-              <div class="mb-3">
-                <label for="idea" class="form-label">Idea</label>
-                <textarea class="form-control" id="idea" rows="3" placeholder="Cuéntanos tu idea..."></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imagen" class="form-label">Subir una imagen (opcional)</label>
-                <input class="form-control" type="file" id="imagen" accept="image/*">
-              </div>
-              <button type="submit" class="btn btn-cartier">Enviar</button>
-            </form>
-          </div>
-          <!-- Imagen -->
-          <div class="col-md-6 text-center pe-md-5 ps-md-4">
-            <img src="imagenes/IMAGEN GENERICA PRUEBA CONTACTANOS.jpg" alt="Imagen de contacto" class="img-fluid rounded shadow">
-          </div>
+<body>
+  <section class="py-5 bg-white" id="contacto">
+    <div class="container py-3 mb-5">
+      <div class="row">
+        <div class="col-md-6 ps-md-5 pe-md-4">
+          <p class="fs-2 mb-3 text-justify">Contáctanos</p>
         </div>
       </div>
 
-      <!-- Segunda pestaña: Agenda una cita -->
-      <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
-        <div class="row align-items-center">
-          <!-- Calendario + botón -->
-          <div class="col-md-6 mb-4 ps-md-5 pe-md-4 text-start">
-            <h5 class="mb-3">Selecciona una fecha</h5>
-            <input type="text" class="form-control mb-4" id="fechaCita" placeholder="Haz clic para seleccionar">
+      <!-- Pestañas -->
+      <div class="row">
+        <div class="col-md-6 ps-md-5 pe-md-4">
+          <ul class="nav nav-tabs py-3 mb-4" id="contactTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="form-tab" data-bs-toggle="tab" data-bs-target="#form" type="button" role="tab" aria-controls="form" aria-selected="true">
+                Cuéntanos tu Idea
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other" type="button" role="tab" aria-controls="other" aria-selected="false">
+                Agenda una Cita
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-            <div class="text-center">
-              <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20cita" 
-                target="_blank" 
-                class="btn btn-cartier">
-                Agendar cita por WhatsApp
-              </a>
+      <!-- Contenido de las pestañas -->
+      <div class="tab-content" id="contactTabsContent">
+        <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
+          <div class="row align-items-center">
+            <div class="col-md-6 mb-4 ps-md-5 pe-md-4">
+              <form id="contact-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="correo" class="form-label">Correo</label>
+                  <input type="email" class="form-control" id="correo" name="correo" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+57 300 1234567">
+                </div>
+
+                <div class="mb-3">
+                  <label for="idea" class="form-label">Idea</label>
+                  <textarea class="form-control" id="idea" name="idea" rows="3" placeholder="Cuéntanos tu idea..." required></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="imagen" class="form-label">Subir una imagen (opcional)</label>
+                  <input class="form-control" type="file" id="imagen" name="imagen" accept="image/*">
+                </div>
+
+                <!-- Campo oculto para Reply-To (se llenará con el correo del usuario) -->
+                <input type="hidden" name="reply_to" id="reply_to">
+
+                <button type="submit" class="btn btn-cartier">Enviar</button>
+                <div id="form-msg" class="mt-3 small"></div>
+              </form>
+            </div>
+            <div class="col-md-6 text-center pe-md-5 ps-md-4">
+              <img src="imagenes/IMAGEN GENERICA PRUEBA CONTACTANOS.jpg" alt="Imagen de contacto" class="img-fluid rounded shadow">
             </div>
           </div>
-
-          <!-- Imagen -->
-          <div class="col-md-6 text-center pe-md-5 ps-md-4">
-            <img src="https://via.placeholder.com/500x400?text=Tu+imagen+aqui" 
-                alt="Imagen cita" 
-                class="img-fluid rounded shadow">
-          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-</section>
+  </section>
 
-<footer class="footer-bar">
+  <footer class="footer-bar">
     <div class="footer-section">NAVARRO JOYEROS</div>
     <div class="footer-section">MN JOYERÍA SAS TODOS LOS DERECHOS RESERVADOS</div>
     <div class="footer-section">Tel. 311 296 21 21</div>
@@ -110,3 +90,52 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Usamos DOMContentLoaded para asegurarnos de que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const form = document.getElementById('contact-form');
+      const msg = document.getElementById('form-msg');
+      
+      // Verificamos si el formulario fue encontrado
+      console.log(form);  // Esto debería imprimir el formulario en la consola si todo está bien
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();  // Evita la recarga de la página
+
+          console.log('Formulario enviado');  // Esto debería aparecer en la consola
+
+          msg.textContent = 'Enviando…';
+
+          // Obtener los datos del formulario
+          const nombre = document.getElementById('nombre').value;
+          const correo = document.getElementById('correo').value;
+          const telefono = document.getElementById('telefono').value;
+          const idea = document.getElementById('idea').value;
+          const imagen = document.getElementById('imagen').files[0];
+
+          // Generar el mensaje para WhatsApp
+          let mensaje = `*Nombre:* ${nombre}\n*Correo:* ${correo}\n*Teléfono:* ${telefono}\n*Idea:* ${idea}`;
+
+          if (imagen) {
+            mensaje += `\n*Imagen:* ${imagen.name}`;  // Solo se incluye el nombre del archivo, no la imagen
+          }
+
+          // URL de WhatsApp
+          const numero = '573112962121';  // Número al que se enviará el mensaje
+          const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+          // Redirigir al usuario a WhatsApp
+          window.open(url, '_blank');  // Abre WhatsApp en una nueva pestaña
+
+          // Mostrar el mensaje de confirmación
+          msg.textContent = '¡Gracias! Tu mensaje fue enviado a WhatsApp.';
+          form.reset();  // Limpiar el formulario
+        });
+      } else {
+        console.log("Formulario no encontrado");
+      }
+    });
+  </script>
+</body>
