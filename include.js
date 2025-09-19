@@ -1,34 +1,30 @@
+// include.js (versión robusta para GitHub Pages + dominio propio)
 document.addEventListener("DOMContentLoaded", async () => {
   const includes = document.querySelectorAll("[data-include]");
-  const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-  const basePath = isLocal ? "" : "/" + location.pathname.split("/")[1];
-
-  const fetchPromises = [];
+  const fetches = [];
 
   for (const el of includes) {
-    const file = el.getAttribute("data-include");
-    const fullPath = basePath + "/" + file;
+    const src = el.getAttribute("data-include");
 
-    const fetchPromise = fetch(fullPath)
-      .then(response => {
-        if (!response.ok) throw new Error(`❌ ${response.status} al cargar ${file}`);
-        return response.text();
+    // Resuelve la URL relativa respecto a la página actual (mismo origen)
+    const url = new URL(src, document.baseURI).href;
+
+    const p = fetch(url, { cache: "no-cache" })
+      .then(res => {
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText} al cargar ${src}`);
+        return res.text();
       })
       .then(html => {
-        el.innerHTML = html;
+        el.innerHTML = html;              // o el.outerHTML = html; si quieres reemplazar el <div>
       })
       .catch(err => {
-        el.innerHTML = `<p style="color:red;">${err.message}</p>`;
+        console.error("Include failed:", url, err);
+        el.innerHTML = `<!-- include failed: ${url} -->`;
       });
 
-    fetchPromises.push(fetchPromise);
+    fetches.push(p);
   }
 
-  // Espera a que se carguen TODOS los includes
-  await Promise.all(fetchPromises);
-
-  // Espera un poco más para asegurar que DOM ya está procesado
-  setTimeout(() => {
-    document.dispatchEvent(new Event("includesLoaded"));
-  }, 50);
+  await Promise.all(fetches);
+  document.dispatchEvent(new Event("includesLoaded"));
 });
