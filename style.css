@@ -1,6 +1,6 @@
 /* === ESTILOS GENERALES === */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Adamina', serif;
   margin: 0;
   padding: 0;
   background-color: #fff;
@@ -95,7 +95,6 @@ body {
 .fs-2 {
   font-weight: bold;
   color: #000;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -462,7 +461,4 @@ body {
   }
 }
 
-/* Ajuste para mover la imagen 1 cm hacia arriba en la pestaña "Cuéntanos tu Idea" */
-#contacto .img-fluid {
-  margin-top: -1cm; /* Mueve la imagen hacia arriba 1 cm */
-}
+
