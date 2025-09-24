@@ -461,4 +461,51 @@ body {
   }
 }
 
+/* === TEXTOS CENTRADOS SOLO EN MÓVIL === */
+@media (max-width: 768px) {
+  #signet h2, 
+  #signet p, 
+  #signet a,
+  #medallon h2, 
+  #medallon p, 
+  #medallon a,
+  #nosotros h2,
+  #nosotros p,
+  #nosotros a {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
 
+
+/* === SECCIÓN NOSOTROS === */
+
+/* Cuerpo del texto: siempre justificado */
+#nosotros p {
+  text-align: justify !important;
+}
+
+/* Título en móvil: centrado */
+@media (max-width: 768px) {
+  #nosotros h2 {
+    text-align: center !important;
+  }
+}
+
+/* Título en escritorio: justificado */
+@media (min-width: 769px) {
+  #nosotros h2 {
+    text-align: justify !important;
+  }
+}
+
+/* Botón "Comprar ahora" centrado en móvil */
+@media (max-width: 768px) {
+  .btn-comprar {
+    display: block !important;
+    text-align: center !important;
+    margin: 20px auto 0 auto !important; /* centra horizontalmente */
+  }
+}
